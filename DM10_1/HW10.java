@@ -29,24 +29,21 @@ class GraphMap {
     private ArrayList<String> graph = new ArrayList<>();
     private ArrayList<String> repVer = new ArrayList<>();
     private ArrayList<String> tmprepVer = new ArrayList<>(2);
-
-    private Boolean isGraph = false;
     GraphMap(String [] data){
         checkGraph(data);
     }
     private void checkGraph(String [] data){
-        for (int i = 0; i < adja.length; i++){
+        for (int i = 0; i < data.length; i++){
             for (int j = 0; j < adja[0].length; j++){
-                if (adja[i][j].contains(data[i])){
+                if (i < adja.length && data[j].contains(adja[i][j])){
                     graph.add(data[i]);
+                    break;
                 }
                 
             }
         }
-        List<String> input = Arrays.asList(data);
-        System.out.println(graph);
-        System.out.println(input);
-        if (graph.equals(input)){
+        ArrayList<String> input = new ArrayList<>(Arrays.asList(data));
+        if (input.containsAll(graph)){
             summarizeGraph(data);
         }
         
