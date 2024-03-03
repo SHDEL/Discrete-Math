@@ -1,7 +1,5 @@
 package DM10_1;
-
 import java.util.Stack;
-
 public class Posfix {
     private Stack<Character> stack = new Stack<>();
     private String infix;

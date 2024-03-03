@@ -19,8 +19,12 @@ public class HW_matrix {
             }
         }
         cal.setMatrix(data);
-        System.out.print("Enter n of power: ");
-        int pow = sc.nextInt();
+        int pow = 0;
+        while (pow <= 1 || pow >= 30){
+            System.out.println("n of power should be 0 - 30");
+            System.out.print("Enter n of power: ");
+            pow = sc.nextInt();
+        }
         cal.powerMatrix(pow);
         sc.close();
     }
